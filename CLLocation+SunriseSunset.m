@@ -28,7 +28,7 @@
  */
 
 #import "CLLocation+SunriseSunset.h"
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 /*******************************************************************************************
 
@@ -203,8 +203,8 @@ typedef enum {
 
 - (NSDate *)dateForSunEvent:(const SunEvent)event withZenith:(const double)zenith
 {
-    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *dateComponents = [cal components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSTimeZoneCalendarUnit) fromDate:self.timestamp];
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *dateComponents = [cal components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone) fromDate:self.timestamp];
     
     const double month = [dateComponents month];
     const double year = [dateComponents year];

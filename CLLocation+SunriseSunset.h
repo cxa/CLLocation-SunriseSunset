@@ -27,7 +27,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <CoreLocation/CoreLocation.h>
+@import CoreLocation;
 
 @interface CLLocation (SunriseSunset)
 - (NSDate *)sunriseDate;
